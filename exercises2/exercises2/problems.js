@@ -23,7 +23,7 @@ window.answers = () => {
     }
 
 
-    // #3 Use a ternary operator (x = cond ? a : b) so that if there is exactly 1 rabbit, this line instead results in "There is 1 rabbit"
+    // #3 Use a ternary operator (x = cond ? a : b) so that if there is exactly 1 rabbit, this line instead results in "There is 1 rabbit" COME BACK
     
     const rabbitString = "There are " +  numRabbits + " rabbits"
 
@@ -47,7 +47,7 @@ window.answers = () => {
     }
 
 
-    // #7 This for loop prints a 3x3 square of #s. Use a nested for-loop to make it print a square of numbers instead (123, 456, 789)
+    // #7 This for loop prints a 3x3 square of #s. Use a nested for-loop to make it print a square of numbers instead (123, 456, 789) COME BACK
     for (let i=0; i<3; i++) {
         let line = "###"
         console.log(line)
@@ -99,15 +99,32 @@ window.answers = () => {
     let b
     let c
     // Solution goes here:
+    for(a = 1; a<=1000/3; a++){
+        for(b=a+1; b<=1000/2; b++){
+            c = 1000 - a - b
+            if((a*a + b*b == c*c) && (a + b + c == 1000)){
+                a2 = a
+                b2 = b
+                c2 = c
+                break
+            }
+        }
+    }
+    a = a2
+    b = b2
+    c = c2
 
 
     // #11 Complete this function so that it returns the product of the three numbers (the three numbers multiplied together)
     function product (num1, num2, num3) {
-
+        return num1 * num2 * num3
     }
 
     // #12 Write a function called 'exclaim' that takes a single string and logs it with an exclamation mark after it
     // For example, exclaim("hello") should log "hello!" to the console
+    function exclaim(text){
+        console.log(text+"!")
+    }
 
 
     // #13 We would like "A", "B", "C", "D", "E" to be printed in the correct order.
@@ -136,12 +153,29 @@ window.answers = () => {
         console.log("E")
     }
     // Invoke your chosen function(s) after this line:
+    theFirst()
+    theThird()
 
 
     // #14 Write a function called largestCommonFactor that takes two number
     // and returns the largest common factor of those numbers
-    function largestCommonFactor () {
+    function largestCommonFactor (x, y) {
+        let bigger
+        let lcf
+        if(x >= y){
+            bigger = x
+        }
+        else{
+            bigger = y
+        }
 
+        for(i = 0; i <= bigger; i++){
+            if(x % i == 0 && y % i == 0){
+                lcf = i
+            }
+        }
+
+        return lcf
     }
 
 
