@@ -13,7 +13,7 @@ let cross = "cross"
 // (inclusive) and update the game state.
 function takeTurn(row, column) {
     console.log("takeTurn was called with row: "+row+", column:"+column);
-    if(board[row][column] != null){
+    if(board[row][column] != null || checkWinner() == "noughts" || checkWinner() == "crosses"){
         console.log("ILLEGAL MOVE, TRY AGAIN")
     }
     else{
@@ -36,7 +36,6 @@ function takeTurn(row, column) {
 function checkWinner() {
     console.log("checkWinner was called");
     
-    let winCheck = 0
     let noughtCount = 0
     let crossCount = 0
 
@@ -75,16 +74,15 @@ function checkWinner() {
         return "crosses"
     }
     
-    noughtCount = 0
     crossCount = 0
     let colCount = 0
 
     for(i=0; i < 3; i++){
         for(j = 0; j < 3; j++){
-            if(board[j][colCount] == "nought"){
+            if(board[j][i] == "nought"){
                 noughtCount += 1
             }
-            else if(board[j][colCount] == "cross"){
+            else if(board[j][i] == "cross"){
                 crossCount += 1
             }
             if(noughtCount == 3){
@@ -97,7 +95,6 @@ function checkWinner() {
         } 
         noughtCount = 0
         crossCount = 0
-        colCount += 1
     }
 
     if(counter == 9){
