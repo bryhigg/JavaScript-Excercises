@@ -9,7 +9,25 @@
 */
 
 function react(sequence) {
+    arr = []
+    arr1 = []
+    
+    for(i in sequence){
+        arr.push(i)
+    }
 
+    arr1.from(arr)
+
+    for(i = 0; i < arr.length; i++){
+        if(i!= arr.length-1){
+            if(arr1[i].toLowerCase() == arr1[i+1].toLowerCase()){
+                if((arr[i].toLowerCase() || arr[i+1].toLowerCase()) && !(arr[i].toLowerCase() && arr[i+1].toLowerCase())){
+    
+                }
+            }
+        }
+
+    }
 }
 
 // Do not modify this code
